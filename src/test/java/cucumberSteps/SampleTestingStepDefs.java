@@ -89,7 +89,7 @@ public class SampleTestingStepDefs {
     public void User_should_see_that_Terms_Conditions_section_is_displayed() throws Throwable{
         String sectionTitle = PageFactory.instance().sampleTestingPageObject().getPageTitle();
 
-        Assert.assertEquals(sectionTitle, "Terms & Conditions");
+        Assert.assertEquals(sectionTitle, "TERMS & CONDITIONS");
     }
 
 }

@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -58,11 +59,6 @@ public class SampleTestingPageObject extends PageBase {
         return backButton;
     }
 
-    @FindBy(className = "signup-form__back")private List<WebElement> paymentMethods;
-    private List<WebElement> getPaymentMethods(){
-        return paymentMethods;
-    }
-
     @FindBy(id = "not_user_subscribe")private WebElement subscribeLink;
     private WebElement getSubscribeLink(){
         return subscribeLink;
@@ -116,7 +112,8 @@ public class SampleTestingPageObject extends PageBase {
 
     public int paymentMethodsListSize() throws Throwable{
         Thread.sleep(2000);
-        return getPaymentMethods().size();
+        List<WebElement> paymentMethods = driver.findElements(By.cssSelector("ul.selectProviders-list > li"));
+        return paymentMethods.size();
     }
 
     public SampleTestingPageObject clickOnClickHereLink(){
